@@ -216,3 +216,31 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# =========================
+# ML / Transformers
+# =========================
+
+# Hugging Face cache
+.cache/
+huggingface/
+
+# Training artifacts
+checkpoints/
+outputs/
+runs/
+wandb/
+
+# Model weights
+*.pt
+*.pth
+*.bin
+*.ckpt
+*.onnx
+*.safetensors
+
+# Local datasets
+data/raw/
+data/processed/
+
+# Experiment files
+predictions/
