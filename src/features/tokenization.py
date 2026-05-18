@@ -9,7 +9,7 @@ def load_tokenizer(model_name):
 def tokenize_batch(
     examples,
     tokenizer,
-    max_length = 512
+    max_length
     ):
     """
     Tokenize batch of texts.
