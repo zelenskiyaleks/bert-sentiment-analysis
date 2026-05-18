@@ -244,3 +244,8 @@ data/processed/
 
 # Experiment files
 predictions/
+
+# Model artifacts
+models/*
+!models/.gitkeep
+
