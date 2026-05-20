@@ -153,17 +153,18 @@ The benchmark currently includes (for comparison I reduced subset because of App
   
 ## Benchmark Results
 
-Model	     Accuracy	Train Time (min)
-BERT	     0.9060	    12.28
-RoBERTa	     0.9140	    10.51
-DistilBERT	 0.9090	    6.32
+| Model | Accuracy | Train Time (min) |
+| --- | --- | --- |
+| BERT | 0.9060 | 12.28 |
+| RoBERTa | 0.9140 | 10.51 |
+| DistilBERT | 0.9090 | 6.32 |
 
-## Observations
+### Observations
 
-RoBERTa achieved the best validation accuracy
-DistilBERT was the fastest model
-DistilBERT provides a strong speed vs quality tradeoff
-Benchmark results are automatically logged into reports/experiments.csv
+- RoBERTa achieved the best validation accuracy
+- DistilBERT was the fastest model
+- DistilBERT provides a strong speed vs quality tradeoff
+- Benchmark results are automatically logged into `reports/experiments.csv`
 
 ## How to run
 
