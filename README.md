@@ -48,10 +48,12 @@ Dataset contains:
 - binary sentiment labels
 - balanced classes
 
-For baseline experiments I used:
+For benchmark experiments I used:
 
-- Train: 20,000 samples
-- Validation: 5,000 samples
+Train subset: 5,000 samples
+Validation subset: 1,000 samples
+
+A reduced subset was used because of Apple Silicon MPS memory limitations during multi-model benchmarking.
 
 ---
 
@@ -62,6 +64,7 @@ bert-sentiment-analysis/
 │
 ├── configs/
 ├── notebooks/
+├── reports/
 ├── models/
 ├── src/
 │   ├── data/
@@ -140,12 +143,40 @@ Apple Silicon (MPS)
 
 ---
 
+## Models Compared
+
+The benchmark currently includes (for comparison I reduced subset because of Apple Silicon MPS memory limitations during multi-model benchmarking):
+
+- BERT (bert-base-uncased)
+- RoBERTa (roberta-base)
+- DistilBERT (distilbert-base-uncased)
+  
+## Benchmark Results
+
+Model	     Accuracy	Train Time (min)
+BERT	     0.9060	    12.28
+RoBERTa	     0.9140	    10.51
+DistilBERT	 0.9090	    6.32
+
+## Observations
+
+RoBERTa achieved the best validation accuracy
+DistilBERT was the fastest model
+DistilBERT provides a strong speed vs quality tradeoff
+Benchmark results are automatically logged into reports/experiments.csv
+
 ## How to run
 
 Train model:
 
 ```bash
 python -m src.training.train
+```
+
+Run multi-model benchmark:
+
+```bash
+python -m src.training.benchmark
 ```
 
 ---
