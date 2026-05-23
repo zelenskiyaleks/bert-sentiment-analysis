@@ -1,0 +1,5 @@
+model_path: models/checkpoint-2500
+
+tokenizer_name: bert-base-uncased
+
+max_length: 512
