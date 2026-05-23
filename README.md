@@ -182,6 +182,30 @@ python -m src.training.benchmark
 
 ---
 
+## Run Inference
+
+Run sentiment prediction from the command line:
+
+```bash
+python -m src.inference.predict
+```
+
+Example:
+
+Input:
+
+```text
+This movie was absolutely amazing. Great acting and story.
+```
+
+Output:
+
+```text
+Prediction Result
+Sentiment: Positive
+Confidence: 0.9970
+```
+
 ## Tech Stack
 
 - Python
