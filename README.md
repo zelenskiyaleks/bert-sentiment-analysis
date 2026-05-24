@@ -206,6 +206,45 @@ Sentiment: Positive
 Confidence: 0.9970
 ```
 
+## API Service
+
+The project also includes a FastAPI inference service for sentiment prediction.
+
+Run API server:
+
+```bash
+uvicorn src.api.app:app --reload
+```
+
+API will be available at:
+
+```text
+http://127.0.0.1:8000
+```
+
+Interactive Swagger documentation:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+Example request:
+
+```json
+{
+  "text": "This movie was amazing!"
+}
+```
+
+Example response:
+
+```json
+{
+  "sentiment": "Positive",
+  "confidence": 0.9981
+}
+```
+
 ## Tech Stack
 
 - Python
