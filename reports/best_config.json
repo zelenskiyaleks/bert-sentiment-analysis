@@ -1,0 +1,8 @@
+{
+    "model_name": "bert-base-uncased",
+    "learning_rate": 2e-05,
+    "batch_size": 8,
+    "max_length": 512,
+    "accuracy": 0.89,
+    "train_time_minutes": 5.04
+}

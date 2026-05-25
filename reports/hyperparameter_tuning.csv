@@ -1,0 +1,5 @@
+model_name,learning_rate,batch_size,max_length,accuracy,train_time_minutes
+bert-base-uncased,2e-05,4,512,0.876,5.77
+bert-base-uncased,2e-05,8,512,0.89,5.04
+bert-base-uncased,3e-05,4,512,0.872,5.52
+bert-base-uncased,3e-05,8,512,0.888,4.9
