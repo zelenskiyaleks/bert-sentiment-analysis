@@ -98,6 +98,10 @@ bert-sentiment-analysis/
 ├── configs/
 ├── notebooks/
 ├── reports/
+│   ├── experiments.csv
+│   ├── hyperparameter_tuning.csv
+│   └── best_config.json
+│
 ├── models/
 ├── src/
 │   ├── api/
@@ -108,9 +112,9 @@ bert-sentiment-analysis/
 │   └── utils/
 │
 ├── Dockerfile
-├── .dockerignore
 ├── environment.yml
 ├── README.md
+├── .dockerignore
 └── .gitignore
 ```
 
@@ -303,6 +307,50 @@ Open API documentation:
 ```text
 http://localhost:8000/docs
 ```
+
+---
+
+## Hyperparameter Tuning
+
+The project includes a hyperparameter tuning pipeline for experimenting with different training configurations.
+
+Run tuning:
+
+```bash
+python -m src.training.tune
+```
+
+Current tuning parameters:
+
+- learning rate
+- batch size
+
+Example tuning results:
+
+| Learning Rate | Batch Size | Accuracy |
+| --- | --- | --- |
+| 2e-5 | 4 | 0.896 |
+| 2e-5 | 8 | 0.892 |
+| 3e-5 | 4 | 0.890 |
+| 3e-5 | 8 | 0.888 |
+
+Results are automatically saved to:
+
+```text
+reports/hyperparameter_tuning.csv
+```
+
+Best configuration is saved to:
+
+```text
+reports/best_config.json
+```
+
+The tuning pipeline also tracks:
+
+- validation accuracy
+- training time
+- experiment configurations
 
 ---
 
