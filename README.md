@@ -1,3 +1,8 @@
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.x-red)
+![FastAPI](https://img.shields.io/badge/FastAPI-API-green)
+![Docker](https://img.shields.io/badge/Docker-supported-blue)
+
 # BERT Sentiment Analysis
 
 This project is my end-to-end NLP pipeline for sentiment analysis of movie reviews.
@@ -21,6 +26,34 @@ Prediction:
 Positive
 ```
 
+---
+
+## Quick Start
+
+Clone repository:
+
+```bash
+git clone https://github.com/zelenskiyaleks/bert-sentiment-analysis.git
+cd bert-sentiment-analysis
+```
+
+Build Docker image:
+
+```bash
+docker build -t bert-sentiment-api .
+```
+
+Run API:
+
+```bash
+docker run -p 8000:8000 bert-sentiment-api
+```
+
+Open Swagger UI:
+
+```text
+http://localhost:8000/docs
+```
 ---
 
 ## Why I built this project
@@ -50,8 +83,8 @@ Dataset contains:
 
 For benchmark experiments I used:
 
-Train subset: 5,000 samples
-Validation subset: 1,000 samples
+- Train subset: 5,000 samples
+- Validation subset: 1,000 samples
 
 A reduced subset was used because of Apple Silicon MPS memory limitations during multi-model benchmarking.
 
@@ -67,12 +100,15 @@ bert-sentiment-analysis/
 ├── reports/
 ├── models/
 ├── src/
+│   ├── api/
 │   ├── data/
 │   ├── features/
 │   ├── training/
 │   ├── inference/
 │   └── utils/
 │
+├── Dockerfile
+├── .dockerignore
 ├── environment.yml
 ├── README.md
 └── .gitignore
@@ -145,7 +181,7 @@ Apple Silicon (MPS)
 
 ## Models Compared
 
-The benchmark currently includes (for comparison I reduced subset because of Apple Silicon MPS memory limitations during multi-model benchmarking):
+The benchmark currently includes:
 
 - BERT (bert-base-uncased)
 - RoBERTa (roberta-base)
@@ -166,7 +202,7 @@ The benchmark currently includes (for comparison I reduced subset because of App
 - DistilBERT provides a strong speed vs quality tradeoff
 - Benchmark results are automatically logged into `reports/experiments.csv`
 
-## How to run
+## Training
 
 Train model:
 
@@ -184,6 +220,7 @@ python -m src.training.benchmark
 
 ## Run Inference
 
+The project supports interactive command-line inference.
 Run sentiment prediction from the command line:
 
 ```bash
@@ -245,10 +282,36 @@ Example response:
 }
 ```
 
+---
+
+## Docker Support
+
+Build Docker image:
+
+```bash
+docker build -t bert-sentiment-api .
+```
+
+Run Docker container:
+
+```bash
+docker run -p 8000:8000 bert-sentiment-api
+```
+
+Open API documentation:
+
+```text
+http://localhost:8000/docs
+```
+
+---
+
 ## Tech Stack
 
 - Python
 - PyTorch
 - Hugging Face Transformers
+- FastAPI
+- Docker
 - scikit-learn
 - Jupyter Notebook
