@@ -95,6 +95,10 @@ A reduced subset was used because of Apple Silicon MPS memory limitations during
 ```bash
 bert-sentiment-analysis/
 │
+├── .github/
+│   └── workflows/
+│       └── tests.yml
+│
 ├── configs/
 ├── notebooks/
 ├── reports/
@@ -111,8 +115,14 @@ bert-sentiment-analysis/
 │   ├── inference/
 │   └── utils/
 │
+├── tests/
+│   ├── test_inference.py
+│   ├── test_preprocessing.py
+│   └── test_tokenization.py
+│
 ├── Dockerfile
 ├── environment.yml
+├── pytest.ini
 ├── README.md
 ├── .dockerignore
 └── .gitignore
@@ -351,6 +361,50 @@ The tuning pipeline also tracks:
 - validation accuracy
 - training time
 - experiment configurations
+
+---
+
+## Testing
+
+Run tests locally:
+
+```bash
+pytest
+```
+
+Current test coverage includes:
+
+- text preprocessing
+- tokenizer loading
+- batch tokenization
+- inference pipeline
+- sentiment prediction validation
+
+Example output:
+
+```text
+8 passed
+```
+
+---
+
+## CI Pipeline
+
+The project includes a GitHub Actions CI pipeline.
+
+Tests are automatically executed on:
+
+- every push
+- every pull request
+
+CI workflow:
+
+```text
+GitHub Actions
+→ install dependencies
+→ run pytest
+→ validate pipeline
+```
 
 ---
 
