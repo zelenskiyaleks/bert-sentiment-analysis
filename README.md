@@ -2,7 +2,6 @@
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.x-red)
 ![FastAPI](https://img.shields.io/badge/FastAPI-API-green)
 ![Docker](https://img.shields.io/badge/Docker-supported-blue)
-![CI](https://github.com/zelenskiyaleks/bert-sentiment-analysis/actions/workflows/tests.yml/badge.svg)
 
 # BERT Sentiment Analysis
 
