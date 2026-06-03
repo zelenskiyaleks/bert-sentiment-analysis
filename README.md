@@ -2,6 +2,7 @@
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.x-red)
 ![FastAPI](https://img.shields.io/badge/FastAPI-API-green)
 ![Docker](https://img.shields.io/badge/Docker-supported-blue)
+![CI](https://github.com/zelenskiyaleks/bert-sentiment-analysis/actions/workflows/tests.yml/badge.svg)
 
 # BERT Sentiment Analysis
 
@@ -183,7 +184,7 @@ Training setup:
 
 ## Results
 
-Baseline validation accuracy:
+Benchmark validation accuracy:
 
 **93.04%**
 
@@ -208,6 +209,7 @@ The benchmark currently includes:
 | BERT | 0.9060 | 12.28 |
 | RoBERTa | 0.9140 | 10.51 |
 | DistilBERT | 0.9090 | 6.32 |
+
 
 ### Observations
 
@@ -344,6 +346,9 @@ Example tuning results:
 | 3e-5 | 4 | 0.890 |
 | 3e-5 | 8 | 0.888 |
 
+Note:
+Benchmark experiments, hyperparameter tuning and Baseline validation were run on different subsets/configurations, therefore results are not directly comparable.
+
 Results are automatically saved to:
 
 ```text
@@ -407,7 +412,23 @@ GitHub Actions
 ```
 
 ---
+## Deployment
 
+The API is containerized with Docker and can be deployed to cloud platforms such as Render.
+
+Deployment workflow:
+
+```text
+GitHub
+   ↓
+Docker build
+   ↓
+Render deployment
+   ↓
+Public FastAPI endpoint
+```
+
+---
 ## Tech Stack
 
 - Python
